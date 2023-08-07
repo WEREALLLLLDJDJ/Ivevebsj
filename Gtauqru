@@ -683,7 +683,11 @@ local Section = Tab2:NewSection("QB")
 Section:NewToggle("QB Aimbot", "QB Aimbot", function(v)
 enabled = v
 end)
+local variables = {"Variable1", "Variable2", "Variable3"} -- List of variables to cycle through
+local currentIndex = 1
 Section:NewButton("Change Pass Type", "Changes The QB Aimbot Pass Type", function()
+print(variables[currentIndex])
+    currentIndex = (currentIndex % #variables) + 1
 PressKey()    
 end)
 while true do
