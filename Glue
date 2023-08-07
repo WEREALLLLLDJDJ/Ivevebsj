@@ -684,18 +684,23 @@ Section:NewToggle("QB Aimbot", "QB Aimbot", function(v)
 enabled = v
 end)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local variables = {
+    "Variable 1",
+    "Variable 2",
+    "Variable 3"
+}
 
-Section:NewButton("Change Pass Type", "Changes The QB Aimbot Pass Type", function()
-local variables = {"Jump", "Mag", "Slant", "Dime"} -- List of variables to cycle through
 local currentIndex = 1
-OrionLib:MakeNotification({
-	Name = "Pass Type",
-	Content = "Cureent Pass Type Is "..variables[currentIndex].."!",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
-print(variables[currentIndex])
+local Dick = variables[currentIndex]
     currentIndex = (currentIndex % #variables) + 1
+Section:NewButton("Change Pass Type", "Changes The QB Aimbot Pass Type", function()
+local Dick = variables[currentIndex]
+    currentIndex = (currentIndex % #variables) + 1
+OrionLib:MakeNotification({
+        Name = "Pass Type",
+        Content = Dick,
+        Image = "rbxassetid://4483345998",
+        Time = 3
 PressKey()    
 end)
 while true do
