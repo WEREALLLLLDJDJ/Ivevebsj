@@ -465,6 +465,7 @@ local function PressKey()
     wait()
     keyrelease(0x5A)
 end
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local players = game:GetService("Players")
     local userInputService = game:GetService("UserInputService")
     local player = players.LocalPlayer
@@ -643,6 +644,12 @@ local players = game:GetService("Players")
                 locked = not locked
             elseif input.KeyCode == Enum.KeyCode.Z then
                 passType = passTypeSwitch[passType]
+OrionLib:MakeNotification({
+	Name = "Pass Type",
+	Content = passType,
+	Image = "rbxassetid://4483345998",
+	Time = 3
+})
             end
         end
     end)
@@ -683,11 +690,13 @@ local Section = Tab2:NewSection("QB")
 Section:NewToggle("QB Aimbot", "QB Aimbot", function(v)
 enabled = v
 end)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-Section:NewButton("Change Pass Type", "Changes The QB Aimbot Pass Type", function()
-PressKey()    
+Section:NewButton("Change Pass Type", "Changes Pass Type", function()
+PressKey()
 end)
-while true do
+gui.Enabled = false
+    gui.Parent = game:GetService("CoreGui"):FindFirstChild("RobloxGui")
+    
+    while true do
         task.wait()
         if not locked then
             target = findTarget()
@@ -727,3 +736,4 @@ while true do
 
         end
     end
+
