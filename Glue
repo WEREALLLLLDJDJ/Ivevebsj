@@ -696,7 +696,7 @@ end)
 gui.Enabled = false
     gui.Parent = game:GetService("CoreGui"):FindFirstChild("RobloxGui")
     
-    while true do
+    while enabled == true do
         task.wait()
         if not locked then
             target = findTarget()
