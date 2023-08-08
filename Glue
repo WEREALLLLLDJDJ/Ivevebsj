@@ -171,7 +171,7 @@ end
 wait(.5)
 LoadUp = true
 wait(.1)
-local Window = Library.CreateLib("Kiwi Hub | V1", "Serpent")
+local Window = Library.CreateLib("Cherrysploit| V1", "BloodTheme")
 local Tab1 = Window:NewTab("Mags")
 local Tab2 = Window:NewTab("QB")
 local Tab3 = Window:NewTab("Offense")
